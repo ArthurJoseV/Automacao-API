@@ -33,6 +33,10 @@ Os cenários estão em [`tests/livros.spec.ts`](tests/livros.spec.ts). Todos val
 status HTTP e campos do corpo da resposta. Os logins também verificam o status e o
 token retornado antes das requisições autenticadas.
 
+As funções em [`tests/helpers/biblioteca.ts`](tests/helpers/biblioteca.ts) centralizam
+o login por perfil, a criação de dados de livro e a validação do formato dos erros.
+Cada chamada da função de dados gera um ISBN aleatório de 13 dígitos.
+
 O cadastro envia todos os campos obrigatórios do livro e compara os dados recebidos
 com os enviados. A exclusão fica em um bloco `finally`, para limpar o livro criado
 mesmo se uma validação posterior falhar. O `DELETE` deve retornar **204 sem corpo**;
